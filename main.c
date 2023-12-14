@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:47:06 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/12/14 16:45:50 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/12/14 17:03:51 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(int argc, char **argv,  char **envp)
         {
             
             printf("Antes de stdout \n");
-            dup2(end[WRITE_END],STDOUT_FILENO);
+            dup2(end[WRITE_END],STDERR_FILENO);
             printf("despues de stdout \n");
             close(end[READ_END]);
             close(end[WRITE_END]);
