@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:25:16 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/12/13 17:53:11 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/12/18 17:17:32 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char *find_cmd_path(char *cmd, char **envp)
         routes = ft_strjoin(paths_splited[i],"/");
         path = ft_strjoin(routes,cmd);
         free(routes);
-        if (access(path,F_OK))
+        if (access(path, F_OK) == 0)
             return (path);
         free(path);
         i++;
@@ -42,22 +42,30 @@ char *find_cmd_path(char *cmd, char **envp)
     return(0);
 }
 
+
+// void cmd_arg(char *cmd)
+// {
+//     char **args;
+//     char **cmd_splited;
+
+//     cmd_splited = ft_split(cmd, ' ');
+    
+//     args = {find_cmd_path(cmd),cmd[1],NULL};
+    
+    
+// }
+
+
 void    ft_execute(char *argv, char **envp)
 {
     char    **cmd;
     char    *path;
     int     i;
+    char    args;
 
     i = 0;
-
-    cmd = ft_split(argv,' ');
-    while (cmd[i])
-    {
-        printf("%s\n",cmd[i]);
-        i++;
-    }
-    
-    path = find_cmd_path(cmd[0],envp); 
+    cmd = ft_split(argv,' '); 
+    path = find_cmd_path(cmd[0],envp);
     execve(path,cmd,envp);
     if (!path)
     {
@@ -69,3 +77,9 @@ void    ft_execute(char *argv, char **envp)
 
 
 }
+
+// int main (int argc, char **argv,char **envp)
+// {
+//     char *cmd = "ls -l";
+//     ft_execute(cmd,envp);
+// }

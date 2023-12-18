@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:47:06 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/12/14 17:03:51 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/12/18 17:48:51 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,30 +35,26 @@ int main(int argc, char **argv,  char **envp)
         if (pid == 0)
         {
             
-            printf("Antes de stdout \n");
-            dup2(end[WRITE_END],STDERR_FILENO);
-            printf("despues de stdout \n");
+            int infile = open(argv[1],O_RDONLY);
+            dup2(end[WRITE_END],STDOUT_FILENO);
+            dup2(infile,STDOUT_FILENO);
             close(end[READ_END]);
-            close(end[WRITE_END]);
-            ft_execute(argv[1],envp);
-        }
-        
-        pid2 = fork();
-        if (pid2 < 0)
-        {
-            return 0;
-        }
-        if (pid2 == 0)
-        {
-            dup2(end[READ_END],STDIN_FILENO);
-            close(end[READ_END]);
-            close(end[WRITE_END]);            
+            close(infile);
             ft_execute(argv[2],envp);
+        }
+        else
+        {
+            int outfile = open(argv[4],O_WRONLY | O_CREAT | 0777);
+            dup2(end[READ_END],STDIN_FILENO);
+            dup2(outfile,STDOUT_FILENO);
+            
+            close(end[WRITE_END]);         
+            ft_execute(argv[3],envp);
         }
         close(end[READ_END]);            
         close(end[WRITE_END]);            
         waitpid(pid,NULL,0);
-        waitpid(pid2,NULL,0);
+        waitpid(pid,NULL,0);
     }
     return (0);
 }
