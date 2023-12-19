@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:47:06 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/12/19 13:56:20 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/12/19 17:30:30 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ int main(int argc, char **argv,  char **envp)
             return 1;
         if (pid == 0)
             child_proces(argv,envp,end);
-        else
-            waitpid(pid,NULL,0);
-            parent_proces(argv,envp,end);
+        waitpid(pid,NULL,0);
+        parent_proces(argv,envp,end);
+        
     }
     return (0);
 }

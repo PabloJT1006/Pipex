@@ -6,7 +6,7 @@
 #    By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/12 13:26:31 by pjimenez          #+#    #+#              #
-#    Updated: 2023/12/19 14:09:11 by pjimenez         ###   ########.fr        #
+#    Updated: 2023/12/19 17:40:38 by pjimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ RM = rm -f
 
 LIB = pipex.a
 
-FILES = main.c cmd_execute.c process.c
+FILES = main.c cmd_execute.c process.c utils.c
 
 LIBFT = libft/libft.a
 

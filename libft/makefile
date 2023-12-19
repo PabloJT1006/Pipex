@@ -6,11 +6,13 @@
 #    By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 16:55:21 by pjimenez          #+#    #+#              #
-#    Updated: 2023/12/12 17:59:01 by pjimenez         ###   ########.fr        #
+#    Updated: 2023/12/19 14:29:13 by pjimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+LIB = libft.a
+
+PRINTF = printf/libftprintf.a
 
 RM = rm -f
 
@@ -26,19 +28,27 @@ OBJS = $(FILES:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
-all: $(NAME)
+all: $(LIB)
 
-$(NAME): $(OBJS)
-	@ar rcs $(NAME) $(OBJS) 
-	
+$(LIB): $(PRINTF) $(OBJS)
+	@cp	$(PRINTF) $(LIB)
+	@ar rcs $(PRINTF) $(OBJS)
+	@ar rcs $(LIB) $(OBJS)	
+
+$(PRINTF):
+	make -C printf/ all
 $(OBJS): $(FILES)
 	@gcc $(FLAGS) -c $(FILES)
+
+
 	
 clean:
+	make -C printf/ clean
 	@$(RM) -rf $(OBJS)
 	
-fclean: clean 
-	@$(RM) -f $(NAME)
+fclean: clean
+	make -C printf/ clean
+	@$(RM) -f $(LIB)
 	
 re: fclean all
 
