@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:54:06 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/12/13 16:46:14 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/12/19 13:49:59 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@
 //funcion que habra los files y haga las cosas correspondientes
 char *find_cmd_path(char *cmd, char **envp);
 void    ft_execute(char *argv, char **envp);
+void child_proces (char **argv, char **envp,int *end);
+void parent_proces (char **argv, char **envp,int *end);
 // void child_process(char **argv, int *fd, char **envp);
 // void parent_process(char **argv, int *fd, char **envp);
