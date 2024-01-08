@@ -6,13 +6,13 @@
 #    By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 16:55:21 by pjimenez          #+#    #+#              #
-#    Updated: 2023/12/19 14:29:13 by pjimenez         ###   ########.fr        #
+#    Updated: 2023/12/22 12:24:46 by pjimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LIB = libft.a
 
-PRINTF = printf/libftprintf.a
+PRINTF = Printf/libftprintf.a
 
 RM = rm -f
 
@@ -36,18 +36,18 @@ $(LIB): $(PRINTF) $(OBJS)
 	@ar rcs $(LIB) $(OBJS)	
 
 $(PRINTF):
-	make -C printf/ all
+	make -C Printf/ all
 $(OBJS): $(FILES)
 	@gcc $(FLAGS) -c $(FILES)
 
 
 	
 clean:
-	make -C printf/ clean
+	make -C Printf/ clean
 	@$(RM) -rf $(OBJS)
 	
 fclean: clean
-	make -C printf/ clean
+	make -C Printf/ clean
 	@$(RM) -f $(LIB)
 	
 re: fclean all

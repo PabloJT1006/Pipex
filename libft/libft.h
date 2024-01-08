@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:15:15 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/12/19 17:47:33 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/12/22 12:19:13 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "Printf/ft_printf.h"
+# include "Printf/libftprintf.h"
 # define LIBFT_H
 typedef struct	s_list
 {

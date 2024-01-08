@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:38:57 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/12/19 17:57:33 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/01/08 12:26:45 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void errors()
 {
-    perror("Error");
-    ft_printf("%s\n",strerror(errno));
+    perror("Pipex");
+    // ft_printf("%s\n",strerror(errno));
     exit(EXIT_FAILURE);
 }
