@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:25:16 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/01/16 13:52:45 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:04:36 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ char	*ft_find_cmd_path(char *cmd, char **envp)
 	return (0);
 }
 
-void	ft_execute(char *argv, char **envp,int end)
+void	ft_execute(char *argv, char **envp, int end)
 {
 	char	**cmd;
 	void	*path;
 	int		i;
-	
+
 	i = 0;
 	cmd = ft_split(argv, ' ');
 	path = ft_find_cmd_path(cmd[0], envp);
@@ -57,6 +57,6 @@ void	ft_execute(char *argv, char **envp,int end)
 			free(cmd[i]);
 		free(cmd);
 	}
-	dup2(end,STDOUT_FILENO);
+	dup2(end, STDOUT_FILENO);
 	execve(path, cmd, envp);
 }

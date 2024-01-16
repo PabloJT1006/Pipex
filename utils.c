@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:38:57 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/01/16 13:54:39 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:04:31 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	ft_errors(void)
 	exit(1);
 }
 
-void ft_not_found(char *cmd)
+void	ft_not_found(char *cmd)
 {
-	ft_printf("Error: Command not found: %s\n",cmd);
+	ft_printf("Error: Command not found: %s\n", cmd);
 	exit(1);
 }
