@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pjimenez <pjimenez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:00:24 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/05/09 17:32:51 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/06 17:06:18 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
+
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
@@ -27,10 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-// int main (void)
-// {
-// 	char *o = ft_strrchr("ltripouiel",'l');
-// 	printf("%s",o);
-// 	return (0);
-// }

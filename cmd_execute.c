@@ -6,13 +6,13 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:25:16 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/01/11 16:41:54 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/01/16 13:52:45 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	*find_cmd_path(char *cmd, char **envp)
+char	*ft_find_cmd_path(char *cmd, char **envp)
 {
 	int		i;
 	char	**paths_splited;
@@ -41,22 +41,22 @@ char	*find_cmd_path(char *cmd, char **envp)
 	return (0);
 }
 
-void	ft_execute(char *argv, char **envp)
+void	ft_execute(char *argv, char **envp,int end)
 {
 	char	**cmd;
-	char	*path;
+	void	*path;
 	int		i;
-	char	args;
-
+	
 	i = 0;
 	cmd = ft_split(argv, ' ');
-	path = find_cmd_path(cmd[0], envp);
-	execve(path, cmd, envp);
+	path = ft_find_cmd_path(cmd[0], envp);
 	if (!path)
 	{
+		ft_not_found(cmd[0]);
 		while (cmd[i++])
 			free(cmd[i]);
 		free(cmd);
-		errors();
 	}
+	dup2(end,STDOUT_FILENO);
+	execve(path, cmd, envp);
 }

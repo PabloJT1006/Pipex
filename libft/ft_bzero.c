@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:14:18 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/05/04 23:44:50 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:58:57 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-// int main ()
-// {
-//      char str[50];
-
-//      strcpy(str,"This is string.h library function");
-//      puts(str);
-
-//      bzero(str,1);
-//      puts(str);
-
-//      return(0);
-// }

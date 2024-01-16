@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
@@ -22,32 +22,16 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 0)
 	{
-		ft_putchar_fd('-',fd);
+		ft_putchar_fd('-', fd);
 		n *= -1;
 	}
 	if (n >= 10)
 	{
-		ft_putnbr_fd((n / 10),fd);
-		ft_putnbr_fd((n % 10),fd);
+		ft_putnbr_fd((n / 10), fd);
+		ft_putnbr_fd((n % 10), fd);
 	}
 	else
 	{
-		ft_putchar_fd(n + '0',fd);
+		ft_putchar_fd(n + '0', fd);
 	}
 }
-
-// int main(void)
-// {
-// 	int fd;
-
-// 	fd = open("nums.txt", O_CREAT | O_WRONLY, 0777);
-
-// 	if (fd == -1)
-// 	{
-// 		printf("sa liao");
-// 	}
-
-// 	ft_putnr_fd(12345,fd);
-// 	close(fd);
-// 	return (0);
-// }

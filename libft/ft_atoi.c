@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pjimenez <pjimenez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:59:01 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/05/09 14:32:14 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/06 17:07:35 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result);
 }
-// int main (void)
-// {
-// 	printf("%d",ft_atoi("1234"));
-// 	return (0);
-// }

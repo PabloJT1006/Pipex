@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 20:44:48 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/05/30 19:09:12 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/05/31 13:44:13 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		node = ft_lstnew(f(lst->content));
-		if (!node)
+		if (!first_node)
 		{
 			ft_lstclear(&first_node, del);
 		}

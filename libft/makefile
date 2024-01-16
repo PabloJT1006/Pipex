@@ -6,7 +6,7 @@
 #    By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 16:55:21 by pjimenez          #+#    #+#              #
-#    Updated: 2023/12/22 12:24:46 by pjimenez         ###   ########.fr        #
+#    Updated: 2024/01/11 17:16:04 by pjimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ clean:
 	@$(RM) -rf $(OBJS)
 	
 fclean: clean
-	make -C Printf/ clean
+	make -C Printf/ fclean
 	@$(RM) -f $(LIB)
 	
 re: fclean all

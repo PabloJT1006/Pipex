@@ -6,9 +6,11 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:07:54 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/04/28 13:55:04 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:59:49 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static	int	ft_lower(int c)
 {

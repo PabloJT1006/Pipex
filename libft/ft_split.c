@@ -6,46 +6,34 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:00:04 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/05/31 15:58:45 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/06 17:08:58 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//lo primero de todo funcion que te cunte la cantidad de palabras para alocar
-//segun ese numero de palabras generar la cantidad de filas
-//Utilizar un contador de caracteres para cada palabra y y este resultado
-//utilizarlo para el len de substr(te coje una lista de caracteres desde 0 hasta
-//hasta el len calculado), el resultado dara la palabra hasta la coma, y asi
-//alocamos cada celda el tamaño perfecto
 #include "libft.h"
 
 static int	word_counter(char const *str, char c)
 {
-	size_t	i;
+	int		i;
 	int		cont;
+	int		ctrl;
 
 	i = 0;
 	cont = 0;
-	while (str[i] == c)
+	ctrl = 0;
+	while (str[i] != '\0')
 	{
-		i++;
-	}
-	while (i < ft_strlen(str))
-	{
-		if (str[i] == c && str[i - 1] != c)
+		if (str[i] != c && ctrl == 0)
 		{
 			cont++;
+			ctrl = 1;
 		}
-		if (str[i] != c && str[i + 1] == '\0')
-		{
-			cont++;
-		}
+		if (str[i] == c && ctrl == 1)
+			ctrl = 0;
 		i++;
 	}
 	return (cont);
 }
-//cuenta el numero de letras hasta que encuentra un split,
-//en la principal al ir incrementando el puntero directamente
-//esta funcion recorrera la cadeana hasta que encuentre el split
 
 static int	char_count(char const *s, char c)
 {
@@ -58,8 +46,6 @@ static int	char_count(char const *s, char c)
 	}
 	return (i);
 }
-//al ser una bidimensional de una sola columna,
-//con alocar las filas(words) valdria
 
 static char	**memory_allocate(char const *s, char c)
 {
@@ -74,7 +60,6 @@ static char	**memory_allocate(char const *s, char c)
 	}
 	return (str);
 }
-//funcion para liberar fila por fila
 
 static void	ft_free(char **str, int i)
 
@@ -96,7 +81,7 @@ char	**ft_split(char const *s, char c)
 	ctrl = 0;
 	str = memory_allocate(s, c);
 	if (!str || !s)
-		return (ft_free(str, j), NULL);
+		return (free(str), NULL);
 	while (*s != '\0')
 	{
 		if (*s != c && ctrl == 0)
@@ -114,14 +99,3 @@ char	**ft_split(char const *s, char c)
 	str[j] = NULL;
 	return (str);
 }
-// int main (void)
-// {
-// 	char **tabstr;
-
-// 	if (!(tabstr = ft_split("", 'z')))
-//         printf("NULL");
-//     else
-//         if (!tabstr[0])
-//             printf("ok\n");
-// 	return (0);
-// }

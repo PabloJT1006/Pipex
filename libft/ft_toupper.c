@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 21:55:20 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/04/30 22:04:12 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/06 17:09:34 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,3 @@ int	ft_toupper(int c)
 	}
 	return (c);
 }
-
-// int main (void)
-// {
-// 	ft_toupper('c');
-
-// 	return (0);
-// }

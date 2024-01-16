@@ -6,16 +6,13 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:09:29 by pjimenez          #+#    #+#             */
-/*   Updated: 2023/05/24 21:41:59 by pjimenez         ###   ########.fr       */
+/*   Updated: 2023/06/06 16:57:05 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "string.h"
 
-typedef unsigned long	t_size;
-
-void	*ft_memmove(void *dst, const void *src, t_size len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*dest_pnt;
 	char	*src_pnt;
@@ -41,11 +38,3 @@ void	*ft_memmove(void *dst, const void *src, t_size len)
 	}
 	return (dst);
 }
-// int	main(void)
-// {
-// 	char	dest[10] = "adios";
-// 	char	src[10] = "Hola";
-
-// 	puts(ft_memmove(dest, src, 2));
-// 	return (0);
-// }

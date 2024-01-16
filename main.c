@@ -6,17 +6,11 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:47:06 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/01/11 16:59:21 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/01/16 13:43:21 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-
-// void ft_leaks()
-// {
-// 	system("leaks pipex");
-// }
-
 
 int	main(int argc, char **argv, char **envp)
 {
@@ -24,18 +18,19 @@ int	main(int argc, char **argv, char **envp)
 	pid_t	pid;
 
 	pipe(end);
-    // atexit(ft_leaks);
 	if (argc == 5)
 	{
 		if (pipe(end) == -1)
-			errors();
+			ft_errors();
 		pid = fork();
-		if (pid < 0)
-			errors();
+		if (pid == -1)
+			ft_errors();
 		if (pid == 0)
-			child_proces(argv, envp, end);
+			ft_child_proces(argv, envp, end);
+		else
+			ft_parent_proces(argv, envp, end);	
+			
 		waitpid(pid, NULL, 0);
-		parent_proces(argv, envp, end);
 	}
 	else
 	{
