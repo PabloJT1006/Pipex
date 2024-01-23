@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:38:57 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/01/16 14:04:31 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:23:16 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ void	ft_errors(void)
 
 void	ft_not_found(char *cmd)
 {
-	ft_printf("Error: Command not found: %s\n", cmd);
+	ft_printf("Error: command not found: %s\n", cmd);
+	exit(1);
+}
+
+void	ft_file_error(char *file)
+{
+	ft_printf("Error: no such file or directory: %s\n",file);
 	exit(1);
 }
