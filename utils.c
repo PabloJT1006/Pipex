@@ -6,27 +6,21 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 17:38:57 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/01/23 12:23:16 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:41:03 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	ft_errors(void)
+void	error_one(char *str_perror, int exit_)
 {
-	perror("Error");
-	exit(EXIT_FAILURE);
-	exit(1);
+	perror(str_perror);
+	exit(exit_);
 }
 
-void	ft_not_found(char *cmd)
+void	error_two(char *str_perror, char *file, int exit_)
 {
-	ft_printf("Error: command not found: %s\n", cmd);
-	exit(1);
-}
-
-void	ft_file_error(char *file)
-{
-	ft_printf("Error: no such file or directory: %s\n",file);
-	exit(1);
+	ft_printf("%s: %s\nNo such file or directory: %s\n",
+		str_perror, strerror(errno), file);
+	exit(exit_);
 }

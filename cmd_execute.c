@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:25:16 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/01/16 14:04:36 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:48:40 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_execute(char *argv, char **envp, int end)
 	path = ft_find_cmd_path(cmd[0], envp);
 	if (!path)
 	{
-		ft_not_found(cmd[0]);
+		error_one("Command not found\n",EXIT_FAILURE);
 		while (cmd[i++])
 			free(cmd[i]);
 		free(cmd);

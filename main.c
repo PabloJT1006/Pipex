@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:47:06 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/01/16 14:04:26 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:43:38 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	main(int argc, char **argv, char **envp)
 	if (argc == 5)
 	{
 		if (pipe(end) == -1)
-			ft_errors();
+			error_one("PIPE: ", EXIT_FAILURE);
 		pid = fork();
 		if (pid == -1)
-			ft_errors();
+			error_one("Fork: ", EXIT_FAILURE);
 		if (pid == 0)
 			ft_child_proces(argv, envp, end);
 		else
