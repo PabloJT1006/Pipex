@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:54:06 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/01/23 19:40:57 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:56:22 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ char	*ft_find_cmd_path(char *cmd, char **envp);
 void	ft_execute(char *argv, char **envp, int end);
 void	ft_child_proces(char **argv, char **envp, int *end);
 void	ft_parent_proces(char **argv, char **envp, int *end);
-void	error_one(char *str_perror, int exit_);
-void	error_two(char *str_perror, char *file, int exit_);
+void	ft_error(char *str_error);
+void	error_file(char *file);
