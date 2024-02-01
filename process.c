@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 18:46:45 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/01/24 18:10:36 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:41:41 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	ft_child_proces(char **argv, char **envp, int *end)
 
 	infile = open(argv[1], O_RDONLY, 0777);
 	if (infile == -1)
-		ft_error(argv[1]);
-	dup2(end[WRITE_END],STDOUT_FILENO);
+		error_file(argv[1]);
+	dup2(end[WRITE_END], STDOUT_FILENO);
 	dup2(infile, STDIN_FILENO);
 	close(end[READ_END]);
 	ft_execute(argv[2], envp, end[WRITE_END]);
@@ -31,9 +31,9 @@ void	ft_parent_proces(char **argv, char **envp, int *end)
 
 	outfile = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
 	if (outfile == -1)
-		ft_error(argv[4]);
+		error_file(argv[4]);
 	dup2(end[READ_END], STDIN_FILENO);
-	dup2(outfile,STDOUT_FILENO);
+	dup2(outfile, STDOUT_FILENO);
 	close(end[WRITE_END]);
 	ft_execute(argv[3], envp, outfile);
 }

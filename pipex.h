@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:54:06 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/01/24 15:56:22 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:38:40 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,6 @@ void	ft_execute(char *argv, char **envp, int end);
 void	ft_child_proces(char **argv, char **envp, int *end);
 void	ft_parent_proces(char **argv, char **envp, int *end);
 void	ft_error(char *str_error);
+void	error_file(char *file);
+void	error_cmd(char *cmd);
 void	error_file(char *file);

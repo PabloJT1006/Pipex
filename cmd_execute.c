@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:25:16 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/01/24 18:11:08 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:42:18 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_execute(char *argv, char **envp, int end)
 {
 	char	**cmd;
 	void	*path;
-	char 	*command;
+	char	*command;
 	int		i;
 
 	i = 0;
@@ -53,13 +53,12 @@ void	ft_execute(char *argv, char **envp, int end)
 	path = ft_find_cmd_path(cmd[0], envp);
 	command = cmd[0];
 	execve(path, cmd, envp);
-	// dup2(end, STDOUT_FILENO);
 	if (!path)
 	{
 		while (cmd[i++])
 			free(cmd[i]);
 		free(cmd);
-		ft_error(command);
+		error_cmd(command);
 	}
 	free(command);
 }
