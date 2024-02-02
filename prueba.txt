@@ -1,0 +1,32 @@
+Todo correcto
+./pipex infile.txt "ls -l" "wc -l" outfile.txt
+<infile.txt ls -l | wc -l > outfile.txt
+Archivo no existente
+./pipex infi.txt "ls -l" "wc -l" outfile.txt
+<infi.txt ls -l | wc -l > outfile.txt
+Primer comando mal
+./pipex infile.txt "hola" "wc -l" outfile.txt
+<infile.txt hola | wc -l > outfile.txt
+Segundo comando mal
+./pipex infile.txt "ls -l" "hola" outfile.txt
+<infile.txt ls -l | hola > outfile.txt
+Dos comandos mal
+./pipex infile.txt "adios" "hola" outfile.txt
+<infile.txt adios | hola > outfile.txt
+Todo mal
+./pipex infi.txt "adios" "hola" outfile.txt
+<infi.txt adios | hola > outfile.txt
+Espacio 1
+./pipex infile.txt " " "hola" outfile.txt
+<infi.txt " " | hola > outfile.txt
+Espacio 2
+./pipex infile.txt "ls -l" " " outfile.txt
+<infi.txt ls -l | " " > outfile.txt
+Sin nada
+./pipex infile.txt "" "wc -l" outfile.txt
+<infi.txt "" | wc -l > outfile.txt
+Sin nada 2
+./pipex infile.txt "ls -l" "" outfile.txt
+<infi.txt ls -l | ""> outfile.txt
+
+

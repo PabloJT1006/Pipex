@@ -1,8 +1,7 @@
 ./pipex
 .vscode
 *.out
-*.txt
 *.a
 *.o
-libft/
+
 

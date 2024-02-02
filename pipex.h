@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:54:06 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/02/01 13:38:40 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/02/02 15:37:43 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,5 @@ void	ft_error(char *str_error);
 void	error_file(char *file);
 void	error_cmd(char *cmd);
 void	error_file(char *file);
+void    ft_error_perm();
+int     all_spaces(char *str);

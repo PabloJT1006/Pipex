@@ -6,7 +6,7 @@
 /*   By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:47:06 by pjimenez          #+#    #+#             */
-/*   Updated: 2024/02/01 13:41:51 by pjimenez         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:23:50 by pjimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ int	main(int argc, char **argv, char **envp)
 		ft_printf("Error: Bad arguments\n");
 		ft_printf("Example: ./pipex <file1> <cmd1> <cmd2> <file2>\n");
 	}
-	ft_printf("%s", envp[0]);
 	return (0);
 }

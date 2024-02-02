@@ -6,7 +6,7 @@
 #    By: pjimenez <pjimenez@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/12 13:26:31 by pjimenez          #+#    #+#              #
-#    Updated: 2023/12/19 17:40:38 by pjimenez         ###   ########.fr        #
+#    Updated: 2024/02/02 15:44:41 by pjimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ all: $(NAME)
 $(NAME): $(LIBFT) $(OBJS)
 	cp $(LIBFT) $(LIB)
 	ar rcs $(LIB) $(OBJS)
-	gcc $(FLAGS) -o $(NAME) $(LIB)
+	gcc $(FLAGS) -g -o $(NAME) $(LIB)
 
 $(LIBFT):
 	make -C libft/ all
